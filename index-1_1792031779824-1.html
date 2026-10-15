@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="비움 온열치유 - 따뜻한 온기로 몸과 마음에 편안한 쉼을 선물하세요. 울산 남구 번영로28 2층">
+  <title>비움 온열치유 | 따뜻한 온기, 편안한 쉼</title>
+  <style>
+    :root {
+      --green: #315d3b;
+      --green-dark: #23472d;
+      --green-light: #e9f0e5;
+      --cream: #fbf8ef;
+      --brown: #79553a;
+      --text: #29342b;
+      --muted: #647064;
+      --white: #fff;
+      --shadow: 0 12px 34px rgba(45, 72, 45, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--white);
+      font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, 92%); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.95);
+      border-bottom: 1px solid #edf0e8;
+      backdrop-filter: blur(10px);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { text-decoration: none; font-weight: 900; font-size: 1.35rem; color: var(--green); letter-spacing: -.04em; }
+    .brand span { color: var(--brown); }
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a { font-size: .93rem; text-decoration: none; font-weight: 700; }
+    nav a:hover { color: var(--green); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 22px; border-radius: 999px; background: var(--green);
+      color: var(--white); text-decoration: none; font-weight: 800; border: 0;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .button.outline { background: transparent; color: var(--green); border: 1px solid var(--green); }
+    .hero {
+      position: relative; overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(251,248,239,.98) 0%, rgba(251,248,239,.91) 43%, rgba(251,248,239,.15) 100%),
+        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+    .hero-inner { min-height: 510px; display: flex; align-items: center; padding: 70px 0; }
+    .hero-copy { max-width: 570px; }
+    .eyebrow { color: var(--green); font-weight: 800; letter-spacing: .08em; }
+    h1 { margin: 10px 0 18px; color: var(--green-dark); font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1.2; letter-spacing: -.06em; }
+    .hero p { max-width: 520px; font-size: 1.1rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    section { padding: 76px 0; }
+    .section-title { text-align: center; margin: 0 auto 14px; color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -.04em; }
+    .section-lead { max-width: 720px; margin: 0 auto 38px; text-align: center; color: var(--muted); }
+    .features { background: var(--cream); padding: 28px 0; }
+    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .feature { padding: 18px 12px; text-align: center; }
+    .feature .icon { font-size: 2rem; }
+    .feature h3 { margin: 5px 0 2px; font-size: 1.05rem; }
+    .feature p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 46px; }
+    .about-copy h2 { margin: 0 0 16px; color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.35; }
+    .about-copy p { color: var(--muted); }
+    .about-image {
+      min-height: 330px; border-radius: 28px;
+      background: url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=85") center/cover;
+      box-shadow: var(--shadow);
+    }
+    .note { padding: 18px 20px; background: var(--green-light); border-radius: 14px; color: var(--green-dark); font-weight: 700; }
+    .steps { background: #f7f8f3; }
+    .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step { padding: 24px 18px; background: #fff; border: 1px solid #e8ede3; border-radius: 18px; text-align: center; }
+    .step-number { display: grid; place-items: center; width: 44px; height: 44px; margin: 0 auto 12px; border-radius: 50%; color: #fff; background: var(--green); font-weight: 900; }
+    .step h3 { margin: 0 0 6px; }
+    .step p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .cta { background: linear-gradient(135deg, #315d3b, #54794a); color: #fff; text-align: center; }
+    .cta h2 { margin: 0 0 10px; font-size: clamp(1.8rem, 3vw, 2.5rem); }
+    .cta p { margin: 0 auto 24px; max-width: 650px; color: #edf4e9; }
+    .cta .button { color: var(--green-dark); background: #fff; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
+    .contact-card { padding: 30px; border: 1px solid #e8ede3; border-radius: 22px; box-shadow: var(--shadow); }
+    .contact-card h2 { margin-top: 0; color: var(--green-dark); }
+    .contact-row { display: grid; grid-template-columns: 100px 1fr; gap: 10px; padding: 10px 0; border-bottom: 1px solid #edf0e8; }
+    .contact-row:last-child { border-bottom: 0; }
+    .contact-label { color: var(--muted); font-weight: 700; }
+    .contact-row a { color: var(--green); font-weight: 800; text-decoration: none; }
+    .map-placeholder { min-height: 260px; display: grid; place-items: center; text-align: center; padding: 24px; border-radius: 22px; background: var(--green-light); }
+    .map-placeholder .pin { font-size: 2.5rem; }
+    footer { padding: 24px 0; background: #203f29; color: #eaf0e6; font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .small { font-size: .82rem; opacity: .82; }
+    @media (max-width: 800px) {
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; gap: 10px; }
+      nav { width: 100%; gap: 15px; overflow-x: auto; padding-bottom: 4px; }
+      nav a { white-space: nowrap; font-size: .86rem; }
+      .nav > .button { position: absolute; right: 4%; top: 13px; padding: 9px 12px; font-size: .82rem; }
+      .hero { background: linear-gradient(90deg, rgba(251,248,239,.96), rgba(251,248,239,.76)), url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80") center/cover; }
+      .hero-inner { min-height: 430px; padding: 55px 0; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-image { min-height: 260px; }
+      .step-grid { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 56px 0; }
+    }
+    @media (max-width: 420px) {
+      .brand { font-size: 1.15rem; }
+      .nav > .button { font-size: .75rem; }
+      .step-grid { grid-template-columns: 1fr; }
+      .contact-row { grid-template-columns: 85px 1fr; font-size: .92rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="비움 온열치유 홈">🍃 비움 <span>온열치유</span></a>
+      <nav aria-label="주 메뉴">
+        <a href="#home">홈</a>
+        <a href="#about">비움 온열치유 소개</a>
+        <a href="#experience">체험 안내</a>
+        <a href="#contact">오시는 길</a>
+      </nav>
+      <a class="button" href="tel:01081753399">☎ 전화 문의</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">자연의 따뜻함으로 나를 돌보는 시간</div>
+          <h1>비움 온열치유</h1>
+          <p><strong>따뜻한 온기로 몸과 마음에 편안한 쉼을 선물하세요.</strong></p>
+          <p>자연친화적인 온열 공간에서 잠시 쉬어 가며, 나를 위한 편안한 시간을 가져보세요.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">무료 체험 문의하기 →</a>
+            <a class="button outline" href="#about">비움 온열치유 소개</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-label="온열 체험 안내">
+      <div class="wrap feature-grid">
+        <div class="feature"><div class="icon">☀️</div><h3>따뜻한 온열 체험</h3><p>몸을 따뜻하게 하는 시간</p></div>
+        <div class="feature"><div class="icon">🍃</div><h3>편안한 휴식</h3><p>일상 속 잠깐의 쉼</p></div>
+        <div class="feature"><div class="icon">🧘</div><h3>나를 위한 시간</h3><p>차분하고 여유로운 공간</p></div>
+        <div class="feature"><div class="icon">💚</div><h3>친절한 안내</h3><p>처음 방문하셔도 편안하게</p></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <div class="eyebrow">ABOUT BIUM</div>
+          <h2>따뜻한 휴식으로<br>오늘을 채우세요.</h2>
+          <p>비움 온열치유는 바쁜 일상 속에서 잠시 쉬어 가며 따뜻한 온열 관리를 경험할 수 있는 편안한 공간입니다.</p>
+          <p>원적외선·근적외선 온열기기와 온열매트를 이용한 온열 체험을 통해 몸을 따뜻하게 하고, 편안한 휴식 시간을 가질 수 있도록 도와드립니다.</p>
+          <div class="note">건강한 생활은 나를 돌보는 작은 습관에서 시작됩니다.</div>
+        </div>
+        <div class="about-image" role="img" aria-label="자연 속에서 편안하게 쉬는 분위기의 이미지"></div>
+      </div>
+    </section>
+
+    <section class="steps" id="experience">
+      <div class="wrap">
+        <h2 class="section-title">비움 온열치유 체험 안내</h2>
+        <p class="section-lead">처음 방문하시는 분도 걱정하지 마세요. 문의부터 체험까지 친절하게 안내해 드립니다.</p>
+        <div class="step-grid">
+          <article class="step"><div class="step-number">1</div><h3>전화 문의</h3><p>전화로 무료 체험 가능 시간과 방문 방법을 문의해 주세요.</p></article>
+          <article class="step"><div class="step-number">2</div><h3>방문 안내</h3><p>매장 위치와 체험 과정을 안내해 드립니다.</p></article>
+          <article class="step"><div class="step-number">3</div><h3>온열 체험</h3><p>안내에 따라 편안한 공간에서 온열 체험을 진행합니다.</p></article>
+          <article class="step"><div class="step-number">4</div><h3>편안한 마무리</h3><p>체험 후 궁금한 점을 문의하고 이용 방법을 확인하세요.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <h2>비움 온열치유에서 따뜻한 쉼을 경험해 보세요.</h2>
+        <p>무료 체험에 대해 궁금하신 점은 전화로 문의해 주세요. 방문 전에 연락 주시면 안내해 드립니다.</p>
+        <a class="button" href="tel:01081753399">📞 010-8175-3399 전화하기</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2 class="section-title">문의 및 오시는 길</h2>
+        <p class="section-lead">비움 온열치유에 방문하시기 전에 전화로 문의해 주세요.</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h2>🍃 비움 온열치유</h2>
+            <div class="contact-row"><div class="contact-label">대표</div><div>박홍례</div></div>
+            <div class="contact-row"><div class="contact-label">휴대전화</div><div><a href="tel:01081753399">010-8175-3399</a></div></div>
+            <div class="contact-row"><div class="contact-label">일반전화</div><div><a href="tel:0527105757">052-710-5757</a></div></div>
+            <div class="contact-row"><div class="contact-label">주소</div><div>울산 남구 번영로28 2층</div></div>
+            <p class="small">무료 체험 및 이용 문의는 전화로 연락해 주세요.</p>
+            <a class="button" href="tel:01081753399">전화 문의하기</a>
+          </div>
+          <div class="map-placeholder">
+            <div>
+              <div class="pin">📍</div>
+              <h3>비움 온열치유 찾아오시는 길</h3>
+              <p>울산 남구 번영로28 2층</p>
+              <a class="button outline" target="_blank" rel="noopener noreferrer" href="https://map.naver.com/p/search/울산%20남구%20번영로28">네이버 지도에서 위치 보기 ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><strong>🍃 비움 온열치유</strong><br><span class="small">따뜻한 온기로, 편안한 쉼을</span></div>
+      <div>대표 박홍례 · 울산 남구 번영로28 2층<br>010-8175-3399 · 052-710-5757</div>
+      <div class="small">© <span id="year"></span> 비움 온열치유. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
